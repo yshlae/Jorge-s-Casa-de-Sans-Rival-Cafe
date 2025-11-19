@@ -139,4 +139,4 @@ To run the **ResQnect** Disaster Response and Relief Management System, follow t
    - If you wish to exit the program, select **6. Exit** from the main menu.
 
 ---
-<p align="center">🚨 <b>Prepare, Respond, Recover, Repeat!</b> 🚨</p> 
+<p align="center">🌀 <b>Prepare, Stock, Serve, Repeat.</b> 🌀</p> 
