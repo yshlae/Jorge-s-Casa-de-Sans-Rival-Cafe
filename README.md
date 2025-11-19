@@ -3,8 +3,8 @@
   
   <h1>Sanserve-All: A Centralized Web-Based Inventory And Ordering Management System For Jorge’s Cafe</h1>
   
-  <h3>🪢 Prepare, Respond, Recover, Repeat. 🪢 <br>
-  A disaster response and relief management system for communities. Built for support, made to connect.</h3>
+  <h3>🪢 Your Sans Stop Shop. 🪢 <br>
+  A centralized management built to streamline, simplify, and support Jorge’s Cafe.</h3>
   
   <p><b>IT 2104</b><br>
   <a href="https://github.com/yshlae">Banaag, Ashley Mae R.</a></p>
