@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://github.com/yshlae/Jorge-s-Casa-de-Sans-Rival-Cafe/blob/main/images/Jorge's%20Cafe%20Logo.png" alt="Jorge's Cafe Logo" width="260" height="260">
+  <img src="https://github.com/yshlae/Jorge-s-Casa-de-Sans-Rival-Cafe/blob/main/images/Jorge's%20Cafe%20Logo.png" alt="Jorge's Cafe Logo" width="300" height="300">
   
   <h1>Sanserve-All: A Centralized Web-Based Inventory And Ordering Management System For Jorge’s Cafe</h1>
   
