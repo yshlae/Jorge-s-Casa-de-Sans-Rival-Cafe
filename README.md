@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="C:\Users\ashley\Downloads\Jorge's Cafe Logo.png" alt="ResQnect Logo" width="240" height="240">
+  <img src="C:\Users\ashley\Downloads\Jorge's Cafe Logo.png" alt="Jorge's Cafe Logo" width="240" height="240">
   
   <h1>ResQnect</h1>
   
