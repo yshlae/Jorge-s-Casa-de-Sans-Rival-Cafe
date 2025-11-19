@@ -4,7 +4,7 @@
   <h1>Sanserve-All: A Centralized Web-Based Inventory And Ordering Management System For Jorge’s Cafe</h1>
   
   <h3>🌀 Your Sans Stop Shop. 🌀 <br>
-  A centralized management system built for support, made to connect.</h3>
+  A centralized management system for Jorge's Cafe. Built for support, made to connect.</h3>
   
   <p><b>IT 2104</b><br>
   <a href="https://github.com/yshlae">Banaag, Ashley Mae R.</a></p>
