@@ -6,7 +6,7 @@
   <h3>🌀 Your Sans Stop Shop. 🌀 <br>
   A centralized management system for Jorge's Cafe. Built for support, made to connect.</h3>
   
-  <p><b>IT 2104</b><br>
+  <p><b>IT 3101</b><br>
   <a href="https://github.com/yshlae">Banaag, Ashley Mae R.</a></p>
   
   <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
