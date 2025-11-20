@@ -42,8 +42,8 @@ In developing SanServe-All, various system design principles and methodologies w
 - **Modular Design Architecture** 🧩
   SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
 
-- **Encapsulation** 💊  
-  Encapsulation bundles data and methods into one class while restricting direct access to object attributes. For example, the `Volunteer` and `Resource` classes have private attributes (like name and quantity) that can only be accessed or modified using specific methods.
+- **Modular Design Architecture** 🧩
+  SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
 
 - **Abstraction** 🗄️  
   I hid complex implementation details in the Manager classes. For instance, users don’t see how data is saved to or loaded from JSON files; they only interact with a menu system to perform actions like assigning tasks or updating resources.
