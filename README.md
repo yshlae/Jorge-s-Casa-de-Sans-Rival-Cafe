@@ -23,8 +23,8 @@
   <summary><strong>Table of Contents</strong></summary>
   
   1. [Project Overview](#project-overview)  
-  2. [Application of Python Concepts](#application-of-python-concepts)  
-  3. [Integration with SDG](#integration-with-sdg)  
+  2. [Application of System Design](#application-of-system-design)  
+  3. [Integration with System Architecture](#integration-with-system-architecture)  
   4. [Running the Program](#running-the-program)
 
 </details>
@@ -72,7 +72,7 @@ In developing SanServe-All, various system design principles and methodologies w
 
 ### Integration with System Architecture 🌐
 <div align="center">
-  <img src="https://github.com/yshlae/ResQnect/blob/main/images/SDG%20Goal%2011.png" alt="SDG Goal 11" width="1000">
+  <img src="https://github.com/yshlae/Jorge-s-Casa-de-Sans-Rival-Cafe/blob/main/images/SDG%208%20Header.png" alt="SDG Goal 8" width="1000">
 </div>
 
 **SanServe-All** integrates core modules—such as inventory management, order processing, receipt verification, and reporting—into a cohesive system architecture that ensures seamless communication through a centralized database and well-defined interfaces. Utilizing a client-server model and layered architecture, the system supports scalability, data consistency, and real-time synchronization, enabling efficient and reliable operations for Jorge’s Café. This integration directly aligns with **Sustainable Development Goal (SDG) 8: Decent Work and Economic Growth** by automating workflows, reducing operational errors, and enhancing employee productivity through real-time notifications and simplified processes. Additionally, SanServe-All facilitates informed decision-making with comprehensive sales and inventory reports, empowering the café to grow sustainably while maintaining quality service and efficient resource use in support of sustained and inclusive economic growth.
