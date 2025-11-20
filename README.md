@@ -70,12 +70,12 @@ In developing SanServe-All, various system design principles and methodologies w
 <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
 </div>
 
-### Integration with SDG 🌍
+### Integration with System Architecture 🌐
 <div align="center">
   <img src="https://github.com/yshlae/ResQnect/blob/main/images/SDG%20Goal%2011.png" alt="SDG Goal 11" width="1000">
 </div>
 
-**ResQnect** aligns with **Sustainable Development Goal (SDG) 11: Sustainable Cities and Communities** by enhancing disaster preparedness, response, and resilience. The system supports communities by tracking and organizing essential resources like food, water, and medical supplies, enabling quick mobilization during emergencies. It efficiently manages task assignments and volunteer deployment, ensuring timely and effective responses in critical areas. Additionally, ResQnect helps build resilience by analyzing response times, resource usage, and volunteer activity, providing valuable insights to improve disaster response strategies over time. Through these functions, ResQnect empowers communities to be more inclusive, safe, and sustainable.
+**SanServe-All** integrates core modules—such as inventory management, order processing, receipt verification, and reporting—into a cohesive system architecture that ensures seamless communication through a centralized database and well-defined interfaces. Utilizing a client-server model and layered architecture, the system supports scalability, data consistency, and real-time synchronization, enabling efficient and reliable operations for Jorge’s Café. This integration directly aligns with **Sustainable Development Goal (SDG) 8: Decent Work and Economic Growth** by automating workflows, reducing operational errors, and enhancing employee productivity through real-time notifications and simplified processes. Additionally, SanServe-All facilitates informed decision-making with comprehensive sales and inventory reports, empowering the café to grow sustainably while maintaining quality service and efficient resource use in support of sustained and inclusive economic growth.
 
  <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
 </div>
