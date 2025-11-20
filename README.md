@@ -39,33 +39,33 @@ To address these operational challenges, the project introduces SanServe-All, a 
 ### Application of System Design 🏗️
 In developing SanServe-All, various system design principles and methodologies were applied to ensure that the platform is efficient, reliable, and aligned with the operational needs of Jorge’s Café. These design concepts guided how the system’s components were structured, how data flows between processes, and how users interact with the platform.
 
-- **Modular Design Architecture** 🧩
-  SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
+- **Modular Design Architecture** 🧩  
+  SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`.  
+  Each module performs specific tasks while remaining connected to a centralized database.  
+  This modular approach ensures `easier maintenance`, `scalability`, and `clear separation of responsibilities`.
 
-- **Modular Design Architecture** 🧩
-  SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
+- **Data Flow Diagrams (DFD)** 📊  
+  DFDs were used to map how data moves across the system. For example, when a customer places an order, the system flows through processes like `order validation`, `inventory deduction`, and `receipt submission`.  
+  `DFD Levels 0 and 1` help break down the workflow, ensuring that each process is logically arranged and avoids bottlenecks.
 
-- **Abstraction** 🗄️  
-  I hid complex implementation details in the Manager classes. For instance, users don’t see how data is saved to or loaded from JSON files; they only interact with a menu system to perform actions like assigning tasks or updating resources.
+- **Entity–Relationship Diagram (ERD)** 🗂️  
+  The ERD defines the database structure, showing how tables such as `Products`, `Ingredients`, `Orders`, `Receipts`, and `Users` relate to each other.  
+  This ensures that `inventory quantities`, `ingredient usage`, and `order transactions` remain organized and accurately linked.
 
-- **Polymorphism** 📑  
-  I used polymorphism with the `__str__()` method in the `Volunteer` and `Resource` classes. Each class has its own implementation for converting an object to a string. Methods like `save_volunteers()` and `save_resources()` also behave similarly for different data types.
+- **Use Case Modeling** 🎭  
+  Use Case Diagrams illustrate how different users interact with the system. Customers can `place orders` and `upload receipts`, while staff can `verify payments` and `update inventory`.  
+  These diagrams guided the development of each feature based on real café workflows.
 
-- **Data Saving and Loading** 🗂️  
-  When new data is added or updated, it is saved in JSON files (`volunteers.json` and `resources.json`). On startup, the system automatically loads this data so users don’t need to re-enter it.
+- **User-Centered Interface Design** 🖥️  
+  Considering that many café employees are non–tech-savvy, the interface was designed to be `simple` and `intuitive`.  
+  `Clear navigation`, `real-time notifications`, and `automated prompts` help prevent errors and make the system easy to use.
 
-- **Main Menu and Submenus** 🔁  
-  The `DisasterResponseSystem` uses a loop to display the main menu, where users can manage volunteers, resources, and tasks. Submenus provide detailed options, like viewing or updating specific records, and loops make navigation easy until users choose to exit.
+- **Real-Time Processing and Notifications** 🔔  
+  System design principles were applied to enable instant updates—such as `notifying staff of new orders` and `automatically adjusting stock levels`.  
+  This real-time workflow helps ensure `timely preparation` and minimizes `stock discrepancies`.
 
-- **Task Assignment and Tracking** ⏱️  
-  Users can assign tasks like “medical aid” or “food distribution” to available volunteers. The system tracks assigned tasks and their statuses, so users can monitor ongoing responses in real-time.
-
-- **Lists and Dictionaries** 📋  
-  Volunteers are stored in a list, making it easy to add, update, or iterate through them.  
-  Resources are stored in a dictionary, where each resource type is a key, and its quantity is the value for quick lookups.
-
-- **Printing and Formatting Strings** 🗳️  
-  I customized the `__str__()` method for cleaner display of volunteer and resource details. F-strings make dynamic outputs, like `f"Task '{task_type}' assigned to {volunteer.name}."`, simple and clear.
+- **Centralized Database Design** 🗄️  
+  A structured database allows all users to access `consistent information`. `Inventory levels`, `order details`, `ingredient usage`, and `receipt submissions` are stored in one place, supporting `accurate reporting` and `efficient decision-making`.
 
 <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
 </div>
