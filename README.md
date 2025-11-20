@@ -32,7 +32,9 @@
 ---
 
 ### Project Overview 🔍
-**𝘙𝘦𝘴𝘘𝘯𝘦𝘤𝘵** is a comprehensive disaster response management system designed to help local governments and relief organizations effectively coordinate emergency response activities. By providing streamlined volunteer management and effective tracking of essential resources like food and medical supplies, the system enables communities to be better prepared for emergencies. The main objective of this system is to assist communities prepare for, respond to, and recover from calamities. 
+**Jorge’s Café** is a growing food business offering pastries, meals, and beverages across multiple branches in Batangas. Despite its expansion, the café continues to rely on manual methods for recording sales, tracking inventory, and processing orders. These traditional practices—such as using Excel sheets, handwritten notes, and Viber messages—often lead to inaccurate records, delays, and communication gaps between staff and management. The lack of a centralized digital system also limits the café’s ability to monitor stock levels, validate payments, and generate summarized operational reports.
+
+To address these operational challenges, the project introduces SanServe-All, a centralized web-based system designed to automate inventory tracking, streamline order processing, and organize sales documentation. The platform features real-time stock monitoring, automated ingredient deduction, product availability updates, and receipt-based payment verification to minimize errors and improve workflow efficiency. By integrating these essential functions into a single accessible system, SanServe-All enhances staff coordination and supports a more reliable, modernized, and scalable operational structure for Jorge’s Café.
 
 ### Application of Python Concepts 🐍
 In developing ResQnect, several Python concepts and libraries were applied to achieve efficient and scalable performance, including:
