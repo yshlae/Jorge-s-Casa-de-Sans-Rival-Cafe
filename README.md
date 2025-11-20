@@ -39,7 +39,7 @@ To address these operational challenges, the project introduces SanServe-All, a 
 ### Application of System Design 🏗️
 In developing SanServe-All, various system design principles and methodologies were applied to ensure that the platform is efficient, reliable, and aligned with the operational needs of Jorge’s Café. These design concepts guided how the system’s components were structured, how data flows between processes, and how users interact with the platform.
 
-- **Modular Design Architecture 🧩**
+- **Modular Design Architecture** 🧩
   SanServe-All is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
 
 - **Encapsulation** 💊  
