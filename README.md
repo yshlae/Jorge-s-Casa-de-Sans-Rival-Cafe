@@ -25,7 +25,7 @@
   1. [Project Overview](#project-overview)  
   2. [Application of System Design](#application-of-system-design)  
   3. [Integration with System Architecture](#integration-with-system-architecture)  
-  4. [Running the Program](#running-the-program)
+  4. [Running the Website](#running-the-website)
 
 </details>
 
@@ -80,7 +80,7 @@ In developing SanServe-All, various system design principles and methodologies w
  <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
 </div>
 
-### Running the Program 👩‍💻
+### Running the System 👩‍💻
 
 To run the SanServe-All system, follow these steps:
 1. Clone the repository:
@@ -99,7 +99,7 @@ To run the SanServe-All system, follow these steps:
   <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
 </div>
 
-### Instructions for Running the Program 💻
+### Instructions for Running the System 💻
 
 To run the **SanServe-All:** A Centralized Web-Based Inventory And Ordering Management System, follow these steps:
 
