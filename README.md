@@ -36,11 +36,11 @@
 
 To address these operational challenges, the project introduces SanServe-All, a centralized web-based system designed to automate inventory tracking, streamline order processing, and organize sales documentation. The platform features real-time stock monitoring, automated ingredient deduction, product availability updates, and receipt-based payment verification to minimize errors and improve workflow efficiency. By integrating these essential functions into a single accessible system, SanServe-All enhances staff coordination and supports a more reliable, modernized, and scalable operational structure for Jorge’s Café.
 
-### Application of Python Concepts 🐍
-In developing ResQnect, several Python concepts and libraries were applied to achieve efficient and scalable performance, including:
+### Application of System Design 🏗️
+In developing SanServe-All, various system design principles and methodologies were applied to ensure that the platform is efficient, reliable, and aligned with the operational needs of Jorge’s Café. These design concepts guided how the system’s components were structured, how data flows between processes, and how users interact with the platform.
 
-- **Classes and Objects (OOP Basics)** 📚  
-  I created `Volunteer` and `Resource` classes to represent individual volunteers and resources. To manage these, I implemented `VolunteerManager` and `ResourceManager` classes, handling actions like adding, viewing, and updating records. The `DisasterResponseSystem` acts as the main controller, integrating volunteer and resource management, task assignment, and response tracking under one system.
+- **Modular Design Architecture** 🧩
+  `SanServe-All` is divided into functional modules such as `Inventory Management`, `Order Processing`, `Receipt Verification`, and `Reporting`. Each module performs specific tasks while remaining connected to a centralized database. This modular approach ensures easier maintenance, scalability, and clear separation of responsibilities.
 
 - **Encapsulation** 💊  
   Encapsulation bundles data and methods into one class while restricting direct access to object attributes. For example, the `Volunteer` and `Resource` classes have private attributes (like name and quantity) that can only be accessed or modified using specific methods.
