@@ -82,7 +82,7 @@ In developing SanServe-All, various system design principles and methodologies w
 
 ### Running the Program 👩‍💻
 
-To run the ResQnect system, follow these steps:
+To run the SanServe-All system, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/yshlae/ResQnect.git
@@ -101,7 +101,7 @@ To run the ResQnect system, follow these steps:
 
 ### Instructions for Running the Program 💻
 
-To run the **ResQnect** Disaster Response and Relief Management System, follow these steps:
+To run the **SanServe-All:** A Centralized Web-Based Inventory And Ordering Management System, follow these steps:
 
 1. **Start the Program**  
    When you run the program, you will be presented with the **main menu**. The menu will look something like this:
