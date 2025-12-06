@@ -77,7 +77,6 @@ export function Hero({ isLoggedIn, userEmail, userRole, onLogin, onLogout, onGoT
         <div className="flex justify-center mb-6">
           <img src={logo} alt="Jorge's Cafe Logo" className="h-32 w-auto" />
         </div>
-        <h1 className="mb-6">Jorge's Cafe</h1>
         <p className="mb-8 max-w-2xl mx-auto">
           Experience the perfect blend of artisanal coffee, fresh pastries, and warm hospitality. 
           Your neighborhood cafe where every cup tells a story.
