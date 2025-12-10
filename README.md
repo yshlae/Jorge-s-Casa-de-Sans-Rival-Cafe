@@ -132,24 +132,24 @@ Use this assuming your project folder is: `C:\xampp\htdocs\jorgescafe\`
 
 <h3> Customer Side </h3>
 
-| FUNCTION        | FILE                    | URL                                                                                                  |
-| --------------- | ----------------------- | ---------------------------------------------------------------------------------------------------- |
-| Home page       | `main.html`             | [http://localhost/sanserve-all/main.html](http://localhost/jorgescafe/main.html)                   |
-| Order page      | `orderonline.html`      | [http://localhost/sanserve-all/orderonline.html](http://localhost/jorgescafe/orderonline.html)     |
-| Customer login  | `customer_login.php`    | [http://localhost/sanserve-all/customer_login.php](http://localhost/jorgescafe/customer_login.php) |
-| Cart & Checkout | (inside orderonline.js) | same page                                                                                            |
-| Logout          | session + redirect      | handled by backend                                                                                   |
+| Page           | URL                                             |
+| -------------- | ----------------------------------------------- |
+| Home Page      | `http://localhost/jorgecafe/main.html`          |
+| Order Page     | `http://localhost/jorgecafe/orderonline.html`   |
+| Customer Login | `http://localhost/jorgecafe/customer_login.php` |
+| Cart & Checkout | (inside orderonline.js) | same page            |
+| Logout          | session + redirect      | handled by backend   |
 
 <h3> Admin Side </h3>
 
-| FUNCTION    | FILE             | URL                                                                                        |
-| ----------- | ---------------- | ------------------------------------------------------------------------------------------ |
-| Admin login | `login.php`      | [http://localhost/sanserve-all/login.php](http://localhost/jorgescafe/login.php)         |
-| Dashboard   | `dashboard.php`  | [http://localhost/sanserve-all/dashboard.php](http://localhost/jorgescafe/dashboard.php) |
-| Inventory   | inside dashboard | via menu                                                                                   |
-| Orders      | inside dashboard | via menu                                                                                   |
-| Recipes     | inside dashboard | via menu                                                                                   |
-| Sales       | inside dashboard | via menu                                                                                   |
+| Page            | URL                                        |
+| --------------- | ------------------------------------------ |
+| Admin Login     | `http://localhost/jorgecafe/login.php`     |
+| Admin Dashboard | `http://localhost/jorgecafe/dashboard.php` |
+| Inventory   | inside dashboard | via menu                    |
+| Orders      | inside dashboard | via menu                    |
+| Recipes     | inside dashboard | via menu                    
+| Sales       | inside dashboard | via menu                    |
 
 <h3> Javascript Connections </h3>
 
@@ -167,6 +167,53 @@ Use this assuming your project folder is: `C:\xampp\htdocs\jorgescafe\`
 - Fetch requests
 - Local storage
 - Modal controls
+
+**SESSION SYSTEM (IMPORTANT)** - Your system uses PHP sessions.
+
+**How session control works:**
+- User logs in
+- Backend sets $_SESSION
+- Frontend checks login using fetch
+- Login link changes into Logout automatically
+- Restricted pages are protected
+
+**If session fails:**
+- User is redirected back to login
+
+<h3> System Structure and Backend Design </h3>
+
+| Folder / File                  | Description                                    |
+| ------------------------------ | ---------------------------------------------- |
+| `jorgecafe/`                   | Root project directory inside XAMPP (`htdocs`) |
+| `templates/`                   | All main pages and PHP views (frontend pages)  |
+| `templates/main.html`          | Customer home page                             |
+| `templates/orderonline.html`   | Customer ordering page                         |
+| `templates/login.php`          | Admin login page                               |
+| `templates/customer_login.php` | Customer login page                            |
+| `templates/dashboard.php`      | Admin dashboard interface                      |
+| `static/`                      | Stores frontend design and scripts             |
+| `static/css/`                  | All stylesheet files                           |
+| `static/css/main.css`          | Home page styling                              |
+| `static/css/orderonline.css`   | Order page styling                             |
+| `static/css/login.css`         | Login page styling                             |
+| `static/css/dashboard.css`     | Dashboard styling                              |
+| `static/js/`                   | All JavaScript logic                           |
+| `static/js/main.js`            | Homepage functionality                         |
+| `static/js/orderonline.js`     | Cart and ordering logic                        |
+| `static/js/login.js`           | Login processing                               |
+| `static/js/dashboard.js`       | Admin dashboard functionality                  |
+| `api/`                         | Backend PHP controllers (API endpoints)        |
+| `api/login.php`                | Handles user login                             |
+| `api/register.php`             | Handles user registration                      |
+| `api/logout.php`               | Destroys login session                         |
+| `api/check_session.php`        | Verifies login status                          |
+| `api/orders.php`               | Manages order processing                       |
+| `api/products.php`             | Fetches product list                           |
+| `instance/`                    | Database configuration                         |
+| `instance/database.php`        | Database connection file                       |
+| `uploads/`                     | Stores uploaded files                          |
+| `uploads/receipts/`            | Receipt image storage                          |
+
 
 
 To use the **SanServe-All Web-Based Inventory and Ordering Management System**, make sure that XAMPP is installed on your device.
