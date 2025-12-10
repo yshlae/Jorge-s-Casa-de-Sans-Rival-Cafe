@@ -82,70 +82,92 @@ In developing SanServe-All, various system design principles and methodologies w
 
 ### Running the System 👩‍💻
 
-To run the SanServe-All system, follow these steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yshlae/ResQnect.git
-2. Navigate to the project repository:
-   ```bash
-   cd ResQnect
-3. Install required dependencies:
-   ```bash
-   pip install -r requirements.txt
-4. Run the program:
-   ```bash
-   python main.py
-   
-  <hr class="w-48 h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700">
-</div>
+To use the **SanServe-All Web-Based Inventory and Ordering Management System**, make sure that XAMPP is installed on your device.
+
+---
+
+## 1. Start XAMPP
+1. Open **XAMPP Control Panel**
+2. Start the following services:
+   - **Apache**
+   - **MySQL**
+
+The system will only work while these two modules are running.
+
+---
+
+## 2. Open the System in Your Browser
+
+### **Customer Interface**
+Paste the link in your browser:
+
+http://localhost/sanserve-all/
+### **Admin Dashboard**
+For staff and administrators:
+
+http://localhost/sanserve-all/admin
+
+---
+
+## 3. Log In
+Once the pages load:
+
+- **Customers** log in to order, browse the menu, add items to cart, choose pickup/dine-in, and upload receipts.
+- **Admins/Staff** log in to view sales, manage menu items, check inventory, update stocks, manage recipes, and monitor orders.
+
+All features appear automatically after logging in.
+
+---
+
+## 4. Using the System
+The system is already connected to XAMPP, so:
+
+- Orders update inventory
+- Sales records update automatically
+- Menu and recipe changes reflect instantly
+- Admin dashboard content loads in real time
+
+No additional installation or setup is needed — just log in and use the features.
+
+---
+
+## 5. Closing the System
+When finished:
+
+1. Log out of your account  
+2. Close your browser  
+3. Go back to **XAMPP**  
+4. Click **Stop** on:
+   - Apache  
+   - MySQL  
+
+This fully shuts down the system.
 
 ### Instructions for Running the System 💻
 
-To run the **SanServe-All:** A Centralized Web-Based Inventory And Ordering Management System, follow these steps:
+This section serves only as a **quick reminder** of how to operate the SanServe-All system.
 
-1. **Start the Program**  
-   When you run the program, you will be presented with the **main menu**. The menu will look something like this:
-   - **1. Volunteer Management**
-   - **2. Resource Management**
-   - **3. Task Assignment**
-   - **4. Disaster Response Tracker**
-   - **5. Response Time Reports**
-   - **6. Exit**
+1. **Make sure XAMPP is installed.**
+2. Open **XAMPP Control Panel**.
+3. Click **Start** on:
+   - Apache
+   - MySQL
+4. Open your browser.
+5. Go to:
+   - Customer Page: `http://localhost/sanserve-all/`
+   - Admin Page: `http://localhost/sanserve-all/admin`
+6. Log in using your account.
+7. Use the system normally:
+   - Customers → Order, upload receipt, receive confirmation
+   - Admin → Manage menu, inventory, orders, and sales
+8. To close the system:
+   - Log out
+   - Close the browser
+   - Stop Apache and MySQL in XAMPP
 
-   Use the number associated with each option to select what you want to do.
+This is all that is needed to run the system.
 
-2. **Volunteer Management: Adding a New Volunteer**
-   - Choose **1. Volunteer Management** from the main menu.
-   - The program will prompt you to enter the following details for a new volunteer:
-     - **Name**: Enter the volunteer’s name.
-     - **Type**: Specify the type of volunteer (ex., **medical**, **rescue**, or **general**).
-     - **Availability**: Specify if the volunteer is available or unavailable.
-   - After entering the details, the program will save this data in **volunteers.json** for future use.
 
-3. **Resource Management: Adding Resources**
-   - Go back to the main menu and choose **2. Resource Management**.
-   - You will be asked to enter the resources available for use in the disaster response, such as:
-     - **Food**: Enter the quantity of food available.
-     - **Water**: Enter the quantity of water available.
-   - This data is saved in **resources.json**, ensuring that the system can access these resources whenever needed.
-
-4. **Task Assignment: Assigning Tasks to Volunteers**
-   - From the main menu, choose **3. Task Assignment**.
-   - You will be prompted to assign a task (such as **medical aid**) to an available volunteer.
-   - The task is added to a task list and marked as **Assigned**, keeping track of which volunteers are assigned to which tasks.
-
-5. **Disaster Response Tracker: Tracking and Updating Tasks**
-   - Choose **4. Disaster Response Tracker** from the main menu to view and manage ongoing tasks.
-   - The program will display the list of tasks with their current statuses (ex., **Assigned**, **Completed**).
-   - You can update the status of tasks (ex., mark a task as **Completed** once it’s finished), ensuring real-time tracking of disaster response efforts.
-  
-6. **Response Time Reports: Viewing Task Response Times**
-   - Choose **5. Response Time Reports** from the main menu.
-   - The program will generate and display **response time reports**, showing the time taken from the assignment of a task to its completion.
-   - You can view a list of tasks along with their assigned times, completion times, and how long each task took to complete. 
-
-7. **Exit**
-   - If you wish to exit the program, select **6. Exit** from the main menu.
 
 ---
 <p align="center">🌀 <b>Prepare, Stock, Serve, Repeat.</b> 🌀</p> 
