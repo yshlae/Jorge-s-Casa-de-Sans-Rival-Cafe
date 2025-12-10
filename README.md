@@ -81,6 +81,93 @@ In developing SanServe-All, various system design principles and methodologies w
 </div>
 
 ### Running the System 👩‍💻
+**1. Frontend Layer (User Interface)** - This is the part users see on their browser. It is written in HTML, CSS, and JavaScript.
+Responsible Files:
+- `main.html` – Main landing page
+- `orderonline.html` – Customer ordering page
+- `dashboard.php` – Admin interface UI
+- `login.php / customer_login.php`– Login interfaces
+- `main.css, login.css, orderonline.css, dashboard.css` – Styling
+- `main.js, login.js, orderonline.js, dashboard.js` – Behavior and dynamic actions
+
+**What this layer handles:**
+- Buttons and navigation
+- Cart logic using `localStorage`
+- Order form inputs
+- Product display
+- Sidebar navigation (dashboard)
+- Login form behavior
+- Checkout modal
+- Animations and notifications
+
+**2. Backend Layer (PHP Logic)**
+This layer controls:
+- Login authentication
+- Session handling
+- Order validation
+- Admin access
+- Database queries
+  
+**Backend Responsibilities:**
+- Verifies credentials
+- Maintains login sessions
+- Protects pages
+- Processes order data
+- Controls who can access dashboard
+- Saves data to MySQL
+
+**3. Data Layer (MySQL Database)** - This is where all records should exist:
+- Users
+- Orders
+- Products
+- Inventory
+- Payments
+
+**The system expects:**
+- A MySQL database connected through PHP
+- Tables for users, orders, products, and stock
+
+**URL MAP (Exact Page Access Guide)**
+Use this assuming your project folder is: `C:\xampp\htdocs\jorgescafe\`
+
+<h3> Customer Side </h3>
+
+| FUNCTION        | FILE                    | URL                                                                                                  |
+| --------------- | ----------------------- | ---------------------------------------------------------------------------------------------------- |
+| Home page       | `main.html`             | [http://localhost/sanserve-all/main.html](http://localhost/jorgescafe/main.html)                   |
+| Order page      | `orderonline.html`      | [http://localhost/sanserve-all/orderonline.html](http://localhost/jorgescafe/orderonline.html)     |
+| Customer login  | `customer_login.php`    | [http://localhost/sanserve-all/customer_login.php](http://localhost/jorgescafe/customer_login.php) |
+| Cart & Checkout | (inside orderonline.js) | same page                                                                                            |
+| Logout          | session + redirect      | handled by backend                                                                                   |
+
+<h3> Admin Side </h3>
+
+| FUNCTION    | FILE             | URL                                                                                        |
+| ----------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| Admin login | `login.php`      | [http://localhost/sanserve-all/login.php](http://localhost/jorgescafe/login.php)         |
+| Dashboard   | `dashboard.php`  | [http://localhost/sanserve-all/dashboard.php](http://localhost/jorgescafe/dashboard.php) |
+| Inventory   | inside dashboard | via menu                                                                                   |
+| Orders      | inside dashboard | via menu                                                                                   |
+| Recipes     | inside dashboard | via menu                                                                                   |
+| Sales       | inside dashboard | via menu                                                                                   |
+
+<h3> Javascript Connections </h3>
+
+| PAGE             | JS FILE        |
+| ---------------- | -------------- |
+| main.html        | main.js        |
+| login.php        | login.js       |
+| orderonline.html | orderonline.js |
+| dashboard.php    | dashboard.js   |
+
+**These JS files handle:**
+- Animations
+- Dynamic display
+- Cart actions
+- Fetch requests
+- Local storage
+- Modal controls
+
 
 To use the **SanServe-All Web-Based Inventory and Ordering Management System**, make sure that XAMPP is installed on your device.
 
