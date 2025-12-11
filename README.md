@@ -289,8 +289,8 @@ This section serves only as a **quick reminder** of how to operate the SanServe-
    - MySQL
 4. Open your browser.
 5. Go to:
-   - Customer Page: `http://localhost/sanserve-all/`
-   - Admin Page: `http://localhost/sanserve-all/admin`
+   - Customer Page: `http://localhost/jorgecafe/`
+   - Admin Page: `http://localhost/jorgecafe/admin`
 6. Log in using your account.
 7. Use the system normally:
    - Customers → Order, upload receipt, receive confirmation
