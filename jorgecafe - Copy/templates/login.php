@@ -1,0 +1,90 @@
+<?php
+session_start();
+if (isset($_SESSION['admin_id'])) {
+    header("Location: dashboard.php");
+    exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Jorge's Cafe</title>
+    <link rel="stylesheet" href="../static/login.css">
+    <script src="../static/js/login.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <h1>Jorge's Cafe</h1>
+            <p>Admin Portal</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('login')">Login</button>
+            <button class="tab" onclick="switchTab('register')">Register</button>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <!-- Login Form -->
+         <form id="login-form" class="form-section" onsubmit="return false;">
+            <div class="form-group">
+                <label for="login-username">Username or Email</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+
+            <button type="button" id="loginBtn" class="btn-login">Login</button>
+
+            <div class="form-footer">
+                <a href="#" onclick="alert('Password reset feature coming soon!'); return false;">Forgot Password?</a>
+            </div>
+            <div class="form-footer">
+            <a href="index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Main Site</a>
+            </div>
+        </form>
+
+        <!-- Register Form -->
+<form id="register-form" class="form-section" onsubmit="return false;">
+            <div class="form-group">
+                <label for="register-username">Username</label>
+                <input type="text" id="register-username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" name="password" required minlength="6">
+                <small style="color: #666;">Minimum 6 characters</small>
+            </div>
+
+            <div class="form-group">
+                <label for="register-confirm">Confirm Password</label>
+                <input type="password" id="register-confirm" name="confirm" required>
+            </div>
+
+<button type="button" id="registerBtn" class="btn-login">Register</button>
+
+            <div class="form-footer">
+                Already have an account? 
+                <a href="#" onclick="switchTab('login'); return false;">Login here</a>
+            </div>
+        </form>
+
+        <div id="loading" class="loading">
+            <p>Loading...</p>
+        </div>
+    </div>
+</body>
+</html>
