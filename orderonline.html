@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - Jorge's Cafe</title>
+    <link rel="stylesheet" href="../static/orderonline.css">
+    <script src="../static/js/orderonline.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../templates/LOGO - TRANSPARENT.png" 
+                 alt="Jorge's Cafe Logo" 
+                 class="nav-logo-image">
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="main.html" class="nav-link">Home</a></li>
+                <li><a href="main.html#menu" class="nav-link">Menu</a></li>
+                <li><a href="orderonline.html" class="nav-link active">Order Online</a></li>
+                <li><a href="main.html#visit" class="nav-link">Visit Us</a></li>
+            </ul>
+            
+            <button class="nav-cart-btn" onclick="viewCart()">
+                🛒 Cart <span id="navCartCount" class="cart-badge">0</span>
+            </button>
+            <a href="customer_login.php" id="loginLink" class="nav-link">Login</a>
+            <a href="../api/logout_user.php" id="logoutLink" class="nav-link" style="display:none;">Logout</a>
+
+            
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Order Online Section -->
+    <section class="order-section" id="order">
+        <div class="order-header">
+            <div>
+                <h2>Order Online</h2>
+                <p>Pick your favorites and we'll have them ready for you</p>
+            </div>
+            <button class="cart-button" onclick="viewCart()">
+                🛒 Cart
+            </button>
+        </div>
+
+       <div class="order-tabs">
+    <button class="order-tab active" onclick="filterOrderProducts('coffee')">Coffee</button>
+    <button class="order-tab" onclick="filterOrderProducts('food')">Food</button>
+</div>
+
+<div class="products-grid">
+<!-- COFFEE SECTION -->
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - AMERICANO.jpg" alt="Americano" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Americano</h4>
+            <span class="product-price">₱80.00</span>
+        </div>
+        <p class="product-description">Classic espresso with hot water</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Americano', 80)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - CAFE LATTE.jpg" alt="Cafe Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Cafe Latte</h4>
+            <span class="product-price">₱130.00</span>
+        </div>
+        <p class="product-description">Smooth espresso with steamed milk</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Cafe Latte', 130)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SPANISH LATTE.jpg" alt="Spanish Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Spanish Latte</h4>
+            <span class="product-price">₱140.00</span>
+        </div>
+        <p class="product-description">Sweet and creamy Spanish-style latte</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Spanish Latte', 140)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - MOCHA LATTE.jpg" alt="Mocha Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Latte</h4>
+            <span class="product-price">₱150.00</span>
+        </div>
+        <p class="product-description">Espresso, chocolate, and steamed milk</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Latte', 150)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - CARAMEL MACCHIATO.jpg" alt="Caramel Macchiato" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Caramel Macchiato</h4>
+            <span class="product-price">₱150.00</span>
+        </div>
+        <p class="product-description">Espresso with vanilla and caramel</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Caramel Macchiato', 150)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SALTED CARAMEL.jpg" alt="Salted Caramel Macchiato" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Salted Caramel Macchiato</h4>
+            <span class="product-price">₱150.00</span>
+        </div>
+        <p class="product-description">Sweet and salty perfection</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel Macchiato', 150)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - MATCHA LATTE.jpg" alt="Matcha Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Latte</h3>
+            <span class="product-price">₱140.00</span>
+        </div>
+        <p class="product-description">Premium matcha with steamed milk</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Latte', 140)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SEA SALT.jpg" alt="Sea Salt Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Sea Salt Latte</h4>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Creamy latte with sea salt foam</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Sea Salt Latte', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SPANISH SEA SALT.jpg" alt="Spanish Sea Salt Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Spanish Sea Salt Latte</h4>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Spanish latte with sea salt twist</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Spanish Sea Salt Latte', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SEA SALT MATCHA.jpg" alt="Matcha Sea Salt Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Sea Salt Latte</h4>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Matcha topped with sea salt cream</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Sea Salt Latte', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - BISCOFF SEA SALT.jpg" alt="Biscoff Sea Salt Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Biscoff Sea Salt Latte</h3>
+            <span class="product-price">₱190.00</span>
+        </div>
+        <p class="product-description">Biscoff cookie latte with sea salt</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Biscoff Sea Salt Latte', 190)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - CARAMEL FRAPPE.jpg" alt="Caramel Macchiato Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Caramel Macchiato Frappe</h3>
+            <span class="product-price">₱180.00</span>
+        </div>
+        <p class="product-description">Iced blended caramel coffee</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Caramel Macchiato Frappe', 180)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - SALTED CARAMEL FRAPPE.jpg" alt="Salted Caramel Macchiato Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Salted Caramel Macchiato Frappe</h3>
+            <span class="product-price">₱180.00</span>
+        </div>
+        <p class="product-description">Iced salted caramel delight</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel Macchiato Frappe', 180)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - JAVA CHIP FRAPPE.jpg" alt="Java Chip Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Java Chip Frappe</h3>
+            <span class="product-price">₱185.00</span>
+        </div>
+        <p class="product-description">Coffee with chocolate chips</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Java Chip Frappe', 185)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - DARK COOKIES AND CREAM.jpg" alt="Dark Cookies & Cream Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Dark Cookies & Cream Frappe</h3>
+            <span class="product-price">₱185.00</span>
+        </div>
+        <p class="product-description">Oreo-inspired coffee frappe</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Dark Cookies & Cream Frappe', 185)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - MOCHA FRAPPE.jpg" alt="Mocha Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Frappe</h3>
+            <span class="product-price">₱180.00</span>
+        </div>
+        <p class="product-description">Iced blended chocolate coffee</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Frappe', 180)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - CHOCO FRAPPE.jpg" alt="Chocolate Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Chocolate Frappe</h3>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Rich chocolate blended drink</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Chocolate Frappe', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - STRAWBERRY FRAPPE.jpg" alt="Strawberry Cream Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Strawberry Cream Frappe</h3>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Sweet strawberry frappe</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Strawberry Cream Frappe', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - MATCHA FRAPPE.jpg" alt="Matcha Frappe" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Frappe</h3>
+            <span class="product-price">₱180.00</span>
+        </div>
+        <p class="product-description">Iced blended matcha</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Frappe', 180)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - CHOCO DRINK.jpg" alt="Chocolate Ice Shaken" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Chocolate Ice Shaken</h3>
+            <span class="product-price">₱130.00</span>
+        </div>
+        <p class="product-description">Shaken chocolate beverage</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Chocolate Ice Shaken', 130)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - STRAWBERRY DRINK.jpg" alt="Strawberry Ice Shaken" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Strawberry Ice Shaken</h3>
+            <span class="product-price">₱130.00</span>
+        </div>
+        <p class="product-description">Refreshing strawberry drink</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Strawberry Ice Shaken', 130)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - UBE DRINK.jpg" alt="UBE Ice Shaken" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">UBE Ice Shaken</h3>
+            <span class="product-price">₱130.00</span>
+        </div>
+        <p class="product-description">Filipino purple yam drink</p>
+        <button class="add-to-cart-btn" onclick="addToCart('UBE Ice Shaken', 130)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - BISCOFF DRINK.jpg" alt="Biscoff Latte" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Biscoff Latte</h3>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Cookie butter latte</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Biscoff Latte', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - STRAWBERRY MATCHA.jpg" alt="Strawberry Matcha" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Strawberry Matcha</h3>
+            <span class="product-price">₱170.00</span>
+        </div>
+        <p class="product-description">Strawberry and matcha fusion</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Strawberry Matcha', 170)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - ICE TEA.jpg" alt="House Blend Iced Tea" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">House Blend Iced Tea</h3>
+            <span class="product-price">₱80.00</span>
+        </div>
+        <p class="product-description">Refreshing house tea</p>
+        <button class="add-to-cart-btn" onclick="addToCart('House Blend Iced Tea', 80)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card">
+    <img src="../templates/Menu Items/PIC - HOT CHOCO.jpg" alt="Hot Chocolate" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Hot Chocolate</h3>
+            <span class="product-price">₱120.00</span>
+        </div>
+        <p class="product-description">Rich and creamy hot chocolate</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Hot Chocolate', 120)">+ Add to Cart</button>
+    </div>
+</div>
+
+<!-- CAKES (FOOD PRODUCTS) -->
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC CASHEW.jpg" alt="Classic Cashew Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Cashew Sans Rival (Mini)</h3>
+            <span class="product-price">₱95.00</span>
+        </div>
+        <p class="product-description">Classic layered cashew meringue cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Cashew Sans Rival Mini', 95)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC CASHEW.jpg" alt="Classic Cashew Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Cashew Sans Rival (Solo)</h3>
+            <span class="product-price">₱230.00</span>
+        </div>
+        <p class="product-description">Individual serving of classic sans rival</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Cashew Sans Rival Solo', 230)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC CASHEW.jpg" alt="Classic Cashew Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Cashew Sans Rival (7" Square)</h3>
+            <span class="product-price">₱500.00</span>
+        </div>
+        <p class="product-description">Perfect for sharing</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Cashew Sans Rival 7 Square', 500)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC CASHEW.jpg" alt="Classic Cashew Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Cashew Sans Rival (8" Round)</h3>
+            <span class="product-price">₱840.00</span>
+        </div>
+        <p class="product-description">Full-sized round cashew sans rival cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Cashew Sans Rival 8 Round', 840)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - ALMOND.jpg" alt="Almond Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Almond Sans Rival (Mini)</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Almond meringue layers</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Almond Sans Rival Mini', 105)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - ALMOND.jpg" alt="Almond Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Almond Sans Rival (Solo)</h3>
+            <span class="product-price">₱240.00</span>
+        </div>
+        <p class="product-description">Individual almond sans rival</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Almond Sans Rival Solo', 240)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - ALMOND.jpg" alt="Almond Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Almond Sans Rival (7" Square)</h3>
+            <span class="product-price">₱520.00</span>
+        </div>
+        <p class="product-description">Square almond sans rival cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Almond Sans Rival 7 Square', 520)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - ALMOND.jpg" alt="Almond Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Almond Sans Rival (8" Round)</h3>
+            <span class="product-price">₱860.00</span>
+        </div>
+        <p class="product-description">Round almond sans rival cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Almond Sans Rival 8 Round', 860)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MOCHA WALNUT.jpg" alt="Mocha Walnut Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Walnut Sans Rival (Mini)</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Coffee and walnut perfection</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Walnut Sans Rival Mini', 105)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MOCHA WALNUT.jpg" alt="Mocha Walnut Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Walnut Sans Rival (Solo)</h3>
+            <span class="product-price">₱240.00</span>
+        </div>
+        <p class="product-description">Individual mocha walnut sans rival</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Walnut Sans Rival Solo', 240)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MOCHA WALNUT.jpg" alt="Mocha Walnut Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Walnut Sans Rival (7" Square)</h3>
+            <span class="product-price">₱520.00</span>
+        </div>
+        <p class="product-description">Square mocha walnut cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Walnut Sans Rival 7 Square', 520)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MOCHA WALNUT.jpg" alt="Mocha Walnut Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mocha Walnut Sans Rival (8" Round)</h3>
+            <span class="product-price">₱860.00</span>
+        </div>
+        <p class="product-description">Round mocha walnut cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mocha Walnut Sans Rival 8 Round', 860)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - PISTACHIO.jpg" alt="Pistachio Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Pistachio Sans Rival (Mini)</h3>
+            <span class="product-price">₱125.00</span>
+        </div>
+        <p class="product-description">Luxurious pistachio meringue</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Pistachio Sans Rival Mini', 125)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - PISTACHIO.jpg" alt="Pistachio Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Pistachio Sans Rival (Solo)</h3>
+            <span class="product-price">₱270.00</span>
+        </div>
+        <p class="product-description">Luxurious pistachio meringue layers</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Pistachio Sans Rival Solo', 270)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - PISTACHIO.jpg" alt="Pistachio Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Pistachio Sans Rival (7" Square)</h3>
+            <span class="product-price">₱595.00</span>
+        </div>
+        <p class="product-description">Square pistachio sans rival cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Pistachio Sans Rival 7 Square', 595)">+ Add to Cart</button>
+    </div>
+</div>
+
+<div class="product-card food-product"> 
+    <img src="../templates/Menu Items/PIC - PISTACHIO.jpg" alt="Pistachio Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+    <div class="product-header">
+        <h3 class="product-name">Pistachio Sans Rival (8" Round)</h3>
+        <span class="product-price">₱1,020.00</span>
+    </div>
+    <p class="product-description">Round pistachio sans rival cake</p>
+    <button class="add-to-cart-btn" onclick="addToCart('Pistachio Sans Rival 8 Round', 1020)">+ Add to Cart</button>
+</div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHOCO HAZELNUT.jpg" alt="Choco Hazelnut Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Choco Hazelnut Sans Rival (Mini)</h3>
+            <span class="product-price">₱135.00</span>
+        </div>
+        <p class="product-description">Rich chocolate hazelnut layers</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Choco Hazelnut Sans Rival Mini', 135)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHOCO HAZELNUT.jpg" alt="Choco Hazelnut Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Choco Hazelnut Sans Rival (Solo)</h3>
+            <span class="product-price">₱295.00</span>
+        </div>
+        <p class="product-description">Individual choco hazelnut delight</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Choco Hazelnut Sans Rival Solo', 295)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHOCO HAZELNUT.jpg" alt="Choco Hazelnut Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Choco Hazelnut Sans Rival (7" Square)</h3>
+            <span class="product-price">₱650.00</span>
+        </div>
+        <p class="product-description">Square choco hazelnut cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Choco Hazelnut Sans Rival 7 Square', 650)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHOCO HAZELNUT.jpg" alt="Choco Hazelnut Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Choco Hazelnut Sans Rival (8" Round)</h3>
+            <span class="product-price">₱1,050.00</span>
+        </div>
+        <p class="product-description">Round choco hazelnut cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Choco Hazelnut Sans Rival 8 Round', 1050)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MATCHA PISTACHIO.jpg" alt="Matcha Pistachio Sans Rival Mini" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Pistachio Sans Rival (Mini)</h3>
+            <span class="product-price">₱125.00</span>
+        </div>
+        <p class="product-description">Matcha and pistachio fusion</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Pistachio Sans Rival Mini', 125)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MATCHA PISTACHIO.jpg" alt="Matcha Pistachio Sans Rival Solo" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Pistachio Sans Rival (Solo)</h3>
+            <span class="product-price">₱270.00</span>
+        </div>
+        <p class="product-description">Individual matcha pistachio sans rival</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Pistachio Sans Rival Solo', 270)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MATCHA PISTACHIO.jpg" alt="Matcha Pistachio Sans Rival 7 Square" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Pistachio Sans Rival (7" Square)</h3>
+            <span class="product-price">₱595.00</span>
+        </div>
+        <p class="product-description">Square matcha pistachio cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Pistachio Sans Rival 7 Square', 595)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MATCHA PISTACHIO.jpg" alt="Matcha Pistachio Sans Rival 8 Round" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Matcha Pistachio Sans Rival (8" Round)</h3>
+            <span class="product-price">₱1,020.00</span>
+        </div>
+        <p class="product-description">Round matcha pistachio cake</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Matcha Pistachio Sans Rival 8 Round', 1020)">+ Add to Cart</button>
+    </div>
+</div>
+<!-- BAKERY ITEMS -->
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC ENSAYMADA.jpg" alt="Classic Ensaymada" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Ensaymada</h3>
+            <span class="product-price">₱55.00</span>
+        </div>
+        <p class="product-description">Filipino brioche with butter and sugar</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Ensaymada', 55)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CLASSIC ENSAYMADA.jpg" alt="Classic Ensaymada Box" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Ensaymada (Box of 6)</h3>
+            <span class="product-price">₱300.00</span>
+        </div>
+        <p class="product-description">Six pieces of Filipino brioche</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Ensaymada Box of 6', 300)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHEESEROLLS.jpg" alt="Cheeserolls" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Cheeserolls</h3>
+            <span class="product-price">₱45.00</span>
+        </div>
+        <p class="product-description">Soft rolls with creamy cheese</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Cheeserolls', 45)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - CHEESEROLLS.jpg" alt="Cheeserolls Box" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Cheeserolls (Box of 6)</h3>
+            <span class="product-price">₱260.00</span>
+        </div>
+        <p class="product-description">Six pieces of cheese rolls</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Cheeserolls Box of 6', 260)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - SILVANAS.jpg" alt="Silvanas Box 10" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Silvanas (Box of 10)</h3>
+            <span class="product-price">₱380.00</span>
+        </div>
+        <p class="product-description">Frozen buttercream cookie sandwiches</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Silvanas Box of 10', 380)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - SILVANAS.jpg" alt="Silvanas Box 20" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Silvanas (Box of 20)</h3>
+            <span class="product-price">₱760.00</span>
+        </div>
+        <p class="product-description">Twenty frozen buttercream cookie sandwiches</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Silvanas Box of 20', 760)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TOASTED CARAMEL BITES.jpg" alt="Original Caramel Bites 200g" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Original Caramel Bites (200g)</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Sweet and chewy caramel treats</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Original Caramel Bites 200g', 105)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TOASTED CARAMEL BITES.jpg" alt="Original Caramel Bites 400g" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Original Caramel Bites (400g)</h3>
+            <span class="product-price">₱200.00</span>
+        </div>
+        <p class="product-description">Large pack of caramel treats</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Original Caramel Bites 400g', 200)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TOASTED CARAMEL BITES.jpg" alt="Salted Caramel Bites 200g" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Salted Caramel Bites (200g)</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Salted caramel perfection</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel Bites 200g', 105)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TOASTED CARAMEL BITES.jpg" alt="Salted Caramel Bites 400g" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Salted Caramel Bites (400g)</h3>
+            <span class="product-price">₱200.00</span>
+        </div>
+        <p class="product-description">Large pack of salted caramel</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel Bites 400g', 200)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - MIXED NUTS.jpg" alt="Mixed Nuts" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Mixed Nuts (200g)</h3>
+            <span class="product-price">₱200.00</span>
+        </div>
+        <p class="product-description">Premium mixed nuts</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Mixed Nuts 200g', 200)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - LENGUA DE GATO.jpg" alt="Lengua de Gato" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Lengua de Gato</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Crispy cat tongue cookies</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Lengua de Gato', 105)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - BUTTER TOAST.jpg" alt="Butter Toast & Broas" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Butter Toast & Broas</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Crunchy butter toast</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Butter Toast & Broas', 105)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - LETCHE FLAN.jpg" alt="Creme Leche Flan" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Creme Leche Flan</h3>
+            <span class="product-price">₱150.00</span>
+        </div>
+        <p class="product-description">Filipino caramel custard</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Creme Leche Flan', 150)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - LETCHE FLAN.jpg" alt="Creme Leche Flan Family" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Creme Leche Flan (Family)</h3>
+            <span class="product-price">₱250.00</span>
+        </div>
+        <p class="product-description">Large Filipino caramel custard</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Creme Leche Flan Family', 250)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - BANANA BREAD.jpg" alt="Banana Bread" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Banana Bread</h3>
+            <span class="product-price">₱160.00</span>
+        </div>
+        <p class="product-description">Moist homemade banana bread</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Banana Bread', 160)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TEA COOKIES.jpg" alt="Tea Cookies Small" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Tea Cookies (Small)</h3>
+            <span class="product-price">₱105.00</span>
+        </div>
+        <p class="product-description">Buttery tea biscuits</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Tea Cookies Small', 105)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/TEA COOKIES.jpg" alt="Tea Cookies Big" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Tea Cookies (Big)</h3>
+            <span class="product-price">₱180.00</span>
+        </div>
+        <p class="product-description">Large pack of buttery tea biscuits</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Tea Cookies Big', 180)">+ Add to Cart</button>
+    </div>
+</div>
+<!-- DESSERTS -->
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - TIRAMISU.jpg" alt="Classic Tiramisu" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Classic Tiramisu</h3>
+            <span class="product-price">₱190.00</span>
+        </div>
+        <p class="product-description">Italian coffee-flavored dessert</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Classic Tiramisu', 190)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - PISTACHIO TIRAMISU.jpg" alt="Pistachio Tiramisu" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Pistachio Tiramisu</h3>
+            <span class="product-price">₱230.00</span>
+        </div>
+        <p class="product-description">Tiramisu with pistachio twist</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Pistachio Tiramisu', 230)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - BANAOFFE.jpg" alt="Biscoff Banoffee Pie" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Biscoff Banoffee Pie</h3>
+            <span class="product-price">₱210.00</span>
+        </div>
+        <p class="product-description">Banana toffee pie with biscoff</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Biscoff Banoffee Pie', 210)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - BROWNIES.jpg" alt="Brownies" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Brownies</h3>
+            <span class="product-price">₱45.00</span>
+        </div>
+        <p class="product-description">Rich chocolate brownies</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Brownies', 45)">+ Add to Cart</button>
+    </div>
+</div>
+<div class="product-card food-product">
+    <img src="../templates/Menu Items/PIC - REVEL BAR.jpg" alt="Revel Bar" class="product-image">
+    <div class="product-info">
+        <div class="product-header">
+            <h4 class="product-name">Revel Bar</h4>
+            <span class="product-price">₱45.00</span>
+        </div>
+        <p class="product-description">Filipino chocolate oatmeal bar</p>
+        <button class="add-to-cart-btn" onclick="addToCart('Revel Bar', 45)">+ Add to Cart</button>
+    </div>
+</div>
+</div>
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="checkout-modal" style="display:none;">
+  <div class="checkout-content">
+    <span class="checkout-close" onclick="closeCheckoutModal()">×</span>
+    <h2>Checkout</h2>
+
+    <input type="text" id="fullName" placeholder="Full Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="emailField" placeholder="Email" required>
+    <textarea id="address" placeholder="Delivery address" required></textarea>
+
+    <button onclick="placeOrder()">Place Order</button>
+  </div>
+</div>
+
+</body>
+</html>
