@@ -8,7 +8,7 @@
   <h2> Source Code: https://drive.google.com/drive/folders/13kcZ0OHMLFFEVKij58CZdkGMBbXu-9Gv?usp=sharing </h2>
   <h2> Mockup: https://www.figma.com/make/8CM0bsruNgGBdmP3vyKJp1/SanServeAll-App?code-node-id=0-6&p=f&t=wl9BshplrDi748zM-0&fullscreen=1 </h2>
   
-<p><b>IT 3101</b><br>
+<p><b>IT 3302</b><br>
   <a href="https://github.com/JoerenAguila">Aguila, Joeren G.</a><br>
   <a href="https://github.com/yshlae">Banaag, Ashley Mae R.</a><br>
   <a href="https://github.com/eniemennie">Catapang, Denielyn P.</a><br>
