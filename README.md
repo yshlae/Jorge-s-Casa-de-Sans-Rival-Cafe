@@ -6,14 +6,12 @@
   <h3>🌀 Your Sans Stop Shop. 🌀 <br>
   A centralized management system for Jorge's Cafe. Built for support, made to connect.</h3>
   <h2> Source Code: https://drive.google.com/drive/folders/13kcZ0OHMLFFEVKij58CZdkGMBbXu-9Gv?usp=sharing </h2>
+  <h2> Mockup: https://www.figma.com/make/8CM0bsruNgGBdmP3vyKJp1/SanServeAll-App?code-node-id=0-6&p=f&t=wl9BshplrDi748zM-0&fullscreen=1 </h2>
   
 <p><b>IT 3101</b><br>
   <a href="https://github.com/JoerenAguila">Aguila, Joeren G.</a><br>
   <a href="https://github.com/yshlae">Banaag, Ashley Mae R.</a><br>
   <a href="https://github.com/eniemennie">Catapang, Denielyn P.</a><br>
-  <a href="https://github.com/Kofijsi">Galay, Jannah Mae G.</a><br>
-  <a href="https://github.com/airajahnelle">Landicho, Aira Jahnelle V.</a><br>
-  <a href="https://github.com/MedranoCy">Medrano, Cyrene Hannah H.</a>
 </p>
 
   
@@ -301,8 +299,6 @@ This section serves only as a **quick reminder** of how to operate the SanServe-
    - Stop Apache and MySQL in XAMPP
 
 This is all that is needed to run the system.
-
-
 
 ---
 <p align="center">🌀 <b>Prepare, Stock, Serve, Repeat.</b> 🌀</p> 
